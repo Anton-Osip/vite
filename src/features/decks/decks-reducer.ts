@@ -1,4 +1,4 @@
-import { AddDeckResponse, Deck } from './decks-api.ts'
+import { Deck } from './decks-api.ts'
 
 const initialState = {
   decks: [] as Deck[],

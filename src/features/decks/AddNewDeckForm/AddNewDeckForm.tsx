@@ -9,6 +9,7 @@ type FormValues = {
 
 export const AddNewDeckForm = () => {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -21,7 +22,9 @@ export const AddNewDeckForm = () => {
 
   const onSubmit = (data: FormValues) => {
     // @ts-ignore
-    dispatch(addDeckTS(data))
+    dispatch(addDeckTS(data)).then(() => {
+      reset()
+    })
   }
 
   return (
