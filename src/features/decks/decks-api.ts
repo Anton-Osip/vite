@@ -31,6 +31,17 @@ type FetchDecksResponse = {
   maxCardsCount: number
 }
 
+export type AddDeckResponse = {
+  id: string
+  userId: string
+  name: string
+  isPrivate: boolean
+  cover: string
+  created: string
+  updated: string
+  cardsCount: number
+}
+
 export const instance = axios.create({
   baseURL: 'https://api.flashcards.andrii.es',
   headers: {
@@ -41,5 +52,8 @@ export const instance = axios.create({
 export const decksAPI = {
   fetchDecks: () => {
     return instance.get<FetchDecksResponse>('/v2/decks')
+  },
+  addDeck: (params: { name: string }) => {
+    return instance.post<Deck>('/v1/decks', params)
   },
 }
