@@ -16,8 +16,8 @@ const App = () => {
 
   return (
     <>
-      <MyComponent items = {['react', 'typescript']} defaultItem = {9} />
-      <MyComponent items = {users} defaultItem = {'JUST STRING'} />
+      <MyComponent items = {['react', 'typescript']} defaultItem = {''} />
+      <MyComponent items = {users} defaultItem = {{ name: '', age: 33 }} />
     </>
   )
 }
